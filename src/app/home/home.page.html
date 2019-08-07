@@ -1,0 +1,86 @@
+<ion-content padding class="background">
+
+  <div class="opci">
+    <ion-item>
+
+      <div class="f1" slot="start">
+        {{sumHP}}
+        <br>
+        <p class="i1">ทั่วทั้งจังหวัด</p>
+      </div>
+      <p slot="end" text-center>
+        <img
+          src="https://images.vexels.com/media/users/3/137244/isolated/preview/c6b689bd0d2f7baaad783f9b6baa5263-cartoon-fire-illustration-by-vexels.png"
+          width="60%" alt="">
+        <br>
+        Hotspot 24 hr
+        <br>
+        <ion-button color="danger" slot="end" (click)="gotoReport7day()">ย้อนหลัง 7 วัน</ion-button>
+      </p>
+    </ion-item>
+    <br>
+  </div>
+  <br>
+  <div class="opci">
+    <ion-item>
+      <ion-label>MAP</ion-label>
+      <div class="button_map">
+        <ion-label slot="end" text-right>
+          <ion-button color="danger" (click)="gotoFullmap()">
+            <ion-icon name="md-expand">
+            </ion-icon>
+          </ion-button>
+        </ion-label>
+      </div>
+
+    </ion-item>
+  </div>
+  <div id="map" style="height:40%;"></div>
+
+
+  <br>
+  <div class="opci">
+    <ion-item>
+      <ion-label>REPORT 24hr</ion-label>
+    </ion-item>
+  </div>
+  <div class="opci">
+
+    <ion-item *ngFor="let a of ampHP">
+      <ion-icon name="pin" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2>อ.{{a.ap_tn}}</h2>
+      </ion-label>
+      <p>{{a.count}} จุด</p>
+      <ion-button fill="outline" color="danger" slot="end" (click)="gotoAmphoe(a.ap_code)">View</ion-button>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-icon name="pin" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2>อ.xxx</h2>
+      </ion-label>
+      <p>2 จุด</p>
+      <ion-button fill="outline" color="danger" slot="end">View</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pin" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2>อ.xxx</h2>
+      </ion-label>
+      <p>2 จุด</p>
+      <ion-button fill="outline" color="danger" slot="end">View</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pin" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2>อ.xxx</h2>
+      </ion-label>
+      <p>2 จุด</p>
+      <ion-button fill="outline" color="danger" slot="end">View</ion-button>
+    </ion-item> -->
+
+  </div>
+</ion-content>

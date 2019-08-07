@@ -1,0 +1,45 @@
+<ion-content padding class="background">
+  <div class="opci">
+    <ion-item>
+      <ion-label>จำนวน hotspot รายตำบล</ion-label>
+      <ion-button color="danger" slot="end" (click)="closeModal()">
+        <ion-icon name="close-circle"></ion-icon>&nbsp;ปิด
+      </ion-button>
+    </ion-item>
+  </div>
+
+  <p></p>
+
+  <div class="opci">
+    <ion-item>
+      <ion-label>MAP</ion-label>
+      <div class="button_map">
+      </div>
+
+    </ion-item>
+  </div>
+  <div id="map-amp" style="height:40%;"></div>
+  <br>
+
+  <div class="opci">
+    <ion-item>
+      <ion-label>Chart</ion-label>
+      <div class="button_map">
+      </div>
+
+    </ion-item>
+  </div>
+  <div id="container" style="display: block;height: 40%;"></div>
+  <br>
+  <div class="opci">
+    <ion-item *ngFor="let a of tamHP">
+      <ion-icon name="pin" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2>ต.{{a.tb_tn}}</h2>
+      </ion-label>
+      <p>{{a.count}} จุด</p>
+      <ion-button fill="outline" color="danger" slot="end" (click)="gotoTamHP(a)">View</ion-button>
+    </ion-item>
+
+  </div>
+</ion-content>

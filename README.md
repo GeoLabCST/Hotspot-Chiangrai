@@ -1,2 +1,2 @@
-# Hospot-Chiangrai
-Hospot-Chiangrai
+# Hotspot-Chiangrai
+Hotspot-Chiangrai

@@ -45,12 +45,12 @@ export class HomePage {
 
     this.map = new L.Map('map', { scrollWheelZoom: true }).setView(pvCentroid, 8);
 
-    L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+    L.tileLayer('https://cors-anywhere.herokuapp.com/http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
       maxZoom: 20,
       subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(this.map);
 
-    const tam = L.tileLayer.wms('http://119.59.125.191/geoserver/omfs/wms?', {
+    const tam = L.tileLayer.wms('https://cors-anywhere.herokuapp.com/http://119.59.125.191/geoserver/omfs/wms?', {
       layers: 'omfs:tambon',
       format: 'image/png',
       transparent: true,
@@ -58,7 +58,7 @@ export class HomePage {
       CQL_FILTER: pvCode
     }).addTo(this.map);
 
-    const amp = L.tileLayer.wms('http://119.59.125.191/geoserver/omfs/wms?', {
+    const amp = L.tileLayer.wms('https://cors-anywhere.herokuapp.com/http://119.59.125.191/geoserver/omfs/wms?', {
       layers: 'omfs:amphoe',
       format: 'image/png',
       transparent: true,
@@ -66,7 +66,7 @@ export class HomePage {
       CQL_FILTER: pvCode
     }).addTo(this.map);
 
-    const pro = L.tileLayer.wms('http://119.59.125.191/geoserver/omfs/wms?', {
+    const pro = L.tileLayer.wms('https://cors-anywhere.herokuapp.com/http://119.59.125.191/geoserver/omfs/wms?', {
       layers: 'omfs:province',
       format: 'image/png',
       transparent: true,

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.geolabth.hotspot_chiangrai" version="0.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.geolabth.hotspot_chiangrai" version="0.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Hotspot Chiang Rai</name>
     <description>Hotspot Chiang Rai App.</description>
     <author email="geolab.cst@gmail.com" href="http://geolab.com/">Geolab Team</author>

@@ -5,6 +5,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { ServiceService } from '../service.service';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
+import { RoutingPage } from '../routing/routing.page';
 
 @Component({
   selector: 'app-tambon',
@@ -77,7 +78,8 @@ export class TambonPage implements OnInit {
     }).addTo(this.map);
 
     this.geolocation.watchPosition().subscribe((res: any) => {
-      this.gps = [res.coords.latitude, res.coords.longitude];
+      this.service.pushGps([res.coords.latitude, res.coords.longitude])
+      // this.gps = [res.coords.latitude, res.coords.longitude];
     });
 
     const fireIcon = L.icon({
@@ -96,12 +98,27 @@ export class TambonPage implements OnInit {
     });
   }
 
-  routing(a: any) {
-    console.log(a);
-    this.r.setWaypoints([
-      L.latLng(this.gps[0], this.gps[1]),
-      L.latLng(Number(a.properties.latitude), Number(a.properties.longitude))
-    ]);
+  async routing(a: any) {
+    // console.log(a);
+    // this.r.setWaypoints([
+    //   L.latLng(this.gps[0], this.gps[1]),
+    //   L.latLng(Number(a.properties.latitude), Number(a.properties.longitude))
+    // ]);
+
+    const latlon = {
+      end: {
+        lat: Number(a.properties.latitude),
+        lng: Number(a.properties.longitude)
+      }
+    }
+
+    const modalTamHP = await this.modalCtrl.create({
+      component: RoutingPage,
+      componentProps: {
+        latlon: latlon
+      }
+    });
+    modalTamHP.present();
   }
 
   closeModal() {

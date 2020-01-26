@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'fullmap', loadChildren: './fullmap/fullmap.module#FullmapPageModule' },
   { path: 'amphoe', loadChildren: './amphoe/amphoe.module#AmphoePageModule' },
   { path: 'report7day', loadChildren: './report7day/report7day.module#Report7dayPageModule' },  { path: 'tambon', loadChildren: './tambon/tambon.module#TambonPageModule' },
+  { path: 'routing', loadChildren: './routing/routing.module#RoutingPageModule' },
 
 ];
 
